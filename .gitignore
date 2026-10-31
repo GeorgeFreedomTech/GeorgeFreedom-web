@@ -1,0 +1,6 @@
+
+# Zola build output
+/public/
+
+# Generated image variants
+/static/processed_images/

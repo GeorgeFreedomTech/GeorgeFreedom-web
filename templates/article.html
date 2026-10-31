@@ -1,0 +1,52 @@
+
+{# Template for articles and tutorials #}
+{% extends "base.html" %}
+
+{# Title #}
+{% block title %}
+    {{ page.title }} | {{ config.title }}
+{% endblock title %}
+
+{% block description %}
+    {{ page.description | default(value="") }}
+{% endblock description %}
+
+{# Article Content #}
+{% block content %}
+    <article class="article-content">
+        <header class="article-header">
+            <h1>{{ page.title }}</h1>
+
+            {% if page.date %}
+                <p class="article-date">
+                    {{ page.date | date(format="%B %d, %Y") }}
+                </p>
+            {% endif %}
+        </header>
+
+        {# Title image for article #}
+        {% if page.extra.image %}
+            {% set image_path = page.colocated_path ~ "/" ~ page.extra.image %}
+            {% set cover = resize_image(path=image_path, width=1100, op="fit_width") %}
+
+            <img
+                class="article-cover"
+                src="{{ cover.url }}"
+                alt="{{ page.title }}"
+            >
+        {% endif %}
+
+        {# Article tags #}
+        {% if page.taxonomies.tags %}
+            <div class="article-tags">
+                {% for tag in page.taxonomies.tags %}
+                    <a href="{{ get_taxonomy_url(kind='tags', term=tag) }}">
+                        {{ tag }}
+                    </a>
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {{ page.content | safe }}
+    </article>
+{% endblock content %}

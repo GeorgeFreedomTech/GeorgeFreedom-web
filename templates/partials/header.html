@@ -1,0 +1,26 @@
+
+{# Header #}
+<header class="site-header">
+
+    <div class="header-top">
+        {# Brand #}
+        <div class="site-brand">
+            <a href="{{ get_url(path='/') }}">
+                {{ config.title }}
+            </a>
+        </div>
+
+        {# Theme toggle #}
+        <button class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">
+            <span class="theme-toggle-icon" aria-hidden="true">☾</span>
+        </button>
+    </div>
+
+    {# Navbar #}
+    <nav class="site-nav" aria-label="Main navigation">
+        <a href="{{ get_url(path='/') }}">Home</a>
+        <a href="{{ get_url(path='/blog/') }}">Blog</a>
+        <a href="{{ get_url(path='/about/') }}">About</a>
+        <a href="{{ get_url(path='/contact/') }}">Contact</a>
+    </nav>
+</header>

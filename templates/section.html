@@ -1,0 +1,81 @@
+
+{# Section - uses shared Web layout #}
+{% extends "base.html" %}
+
+{# Title #}
+{% block title %}
+    {{ section.title }} | {{ config.title }}
+{% endblock title %}
+
+{# Section Desription #}
+{% block description %}
+    {{ section.description | default(value="") }}
+{% endblock description %}
+
+{# Section content #}
+{% block content %}
+    <section class="section-content">
+        <h1>{{ section.title }}</h1>
+
+        {{ section.content | safe }}
+
+        {# Tag navigation #}
+        {% set taxonomy = get_taxonomy(kind="tags") %}
+        <nav class="blog-tags" aria-label="Filter articles by topic">
+            {% for tag in taxonomy.items %}
+                <a href="{{ tag.permalink }}">{{ tag.name }}</a>
+            {% endfor %}
+        </nav>
+
+        {# Automated list of articles according to _index.md #}
+        <div class="article-list">
+            {% for page in section.pages %}
+                <article class="article-card">
+
+                    {# Img left #}
+                    {% if page.extra.image and page.colocated_path %}
+                        {% set image_path = page.colocated_path ~ "/" ~ page.extra.image %}
+                        {% set cover = resize_image(path=image_path, width=600, op="fit_width") %}
+
+                        <a href="{{ page.permalink }}">
+                            <img
+                                src="{{ cover.url }}"
+                                alt="{{ page.title }}"
+                                loading="lazy"
+                            >
+                        </a>
+                    {% endif %}
+
+                    {# Text description right #}
+                    <div class="article-card-content">
+                        <h2>
+                            <a href="{{ page.permalink }}">{{ page.title }}</a>
+                        </h2>
+
+                        {% if page.date %}
+                            <p class="article-date">
+                                {{ page.date | date(format="%B %d, %Y") }}
+                            </p>
+                        {% endif %}
+
+                        {# Article tags #}
+                        {% if page.taxonomies.tags %}
+                            <div class="article-tags">
+                                {% for tag in page.taxonomies.tags %}
+                                    <a href="{{ get_taxonomy_url(kind='tags', term=tag) }}">
+                                        {{ tag }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                        {% if page.description %}
+                            <p>{{ page.description }}</p>
+                        {% endif %}
+                    </div>
+
+                </article>
+            {% endfor %}
+        </div>
+    </section>
+{% endblock content %}
