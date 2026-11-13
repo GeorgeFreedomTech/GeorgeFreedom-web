@@ -468,7 +468,65 @@ b {
 
 
 /* ==================================================
-   10. Code Blocks and Mermaid Diagrams
+   10. Article Tables
+   ================================================== */
+
+/* Table container */
+.article-content table {
+    width: 100%;
+    margin-block: 2rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Table header */
+.article-content thead {
+    background: var(--color-bg);
+}
+
+.article-content th {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Table cells */
+.article-content td {
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--color-border);
+    vertical-align: top;
+}
+
+/* First column emphasis */
+.article-content td:first-child {
+    font-weight: 600;
+}
+
+/* Subtle row hover */
+.article-content tbody tr:hover {
+    background: var(--color-bg);
+}
+
+/* Responsive table */
+@media (max-width: 600px) {
+    .article-content table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    .article-content th,
+    .article-content td {
+        min-width: 130px;
+    }
+}
+
+
+/* ==================================================
+   11. Code Blocks and Mermaid Diagrams
    ================================================== */
 
 /* Code block container */
@@ -509,7 +567,7 @@ pre code {
 
 
 /* ==================================================
-   11. Theme Toggle
+   12. Theme Toggle
    ================================================== */
 
 /* Theme toggle button */
@@ -536,7 +594,7 @@ pre code {
 
 
 /* ==================================================
-   12. Homepage
+   13. Homepage
    ================================================== */
 
 /* Homepage content alignment */
@@ -575,7 +633,7 @@ pre code {
 
 
 /* ==================================================
-   13. About Page
+   14. About Page
    ================================================== */
 
 /* About page text alignment */
@@ -601,7 +659,7 @@ pre code {
 
 
 /* ==================================================
-   14. Contact Page
+   15. Contact Page
    ================================================== */
 
 /* Contact page content alignment */
@@ -632,7 +690,7 @@ pre code {
 
 
 /* ==================================================
-   15. Responsive Styles
+   16. Responsive Styles
    ================================================== */
 
 /* Mobile layout */
