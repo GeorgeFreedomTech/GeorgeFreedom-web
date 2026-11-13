@@ -57,7 +57,7 @@ Running through the Ollama environment with a specific model:
 ollama launch pi --model llama3.1
 ```
 
-Pi agent - **basic interface**:
+*Pi agent: basic interface*
 ![Pi agent - interface](images/pi-start.png)
 
 ### Recommendation - after installation:
@@ -93,7 +93,7 @@ We enter prompts as a combination of a slash and the instruction text into the P
 
 When we type a backslash (/) to start a prompt Pi shows a list of all available prompts below:
 
-Pi agent - showing the **available prompts**:
+*Pi agent: showing the available prompts*
 ![Pi agent - prompt selection](images/pi-prompt-selection.png)
 
 ### 2.2. Hotkeys
@@ -135,7 +135,7 @@ Hotkeys:
 
 Example:
 
-Pi agent - **multiline instructions**:
+*Pi agent: multi-line instructions*
 ![Pi agent - long prompts](images/pi-long-prompt.png)
 
 ### 2.5. Working in the shell:
@@ -176,7 +176,9 @@ The Pi agent basically operates on 2 levels (scopes) that we can modify:
 * Global level
 * Project level
 
-At the global level, we will handle the *general behavior settings and context of the Pi agent that we always want it to do or have*. These settings are then available for all projects. At the project level, we will only have *instructions and context needed for that specific project*.
+At the global level, we will handle the *general behavior settings and context of the Pi agent that we always want it to do or have*. These settings are then available for all projects. 
+
+At the project level, we will only have *instructions and context needed for that specific project*.
 
 ```text
 Would I use it in 5 different projects?
@@ -234,7 +236,7 @@ Example - global AGENTS.md:
 └── settings.json
 ```
 
-Content of **global** AGENTS.md:
+*Content of **global** AGENTS.md:*
 ![Pi agent - global AGENTS.md](images/Pi-global-AGENTS.png)
 
 Example - project AGENTS.md:
@@ -250,7 +252,7 @@ my_project/
 └── static/
 ```
 
-Content of **project** AGENTS.md:
+*Content of **project** AGENTS.md:*
 ![Pi agent - project AGENTS.md](images/Pi-project-AGENTS.png)
 
 ### 3.2. Prompt templates: Routine Actions
@@ -360,6 +362,8 @@ Recap:
 * **Skills** = specialized workflows
 * **Extensions** = specific tools
 
+---
+
 All 4 mechanisms run parallel and complement each other.
 
 1. The Pi agent has basic built-in tools (file operations - read, write, edit, and access to powershell/bash); if I want more, I must actively install them myself (as Extensions).
@@ -372,6 +376,8 @@ All 4 mechanisms run parallel and complement each other.
 
 5. Creating custom Extensions only makes sense when we run into a task for which no available Extension exists.
 
+---
+
 After we add some new teplate prompts, skills or extensions we should restart or reload our Pi: 
 
 ```bash
@@ -380,7 +386,7 @@ After we add some new teplate prompts, skills or extensions we should restart or
 
 And we should see them all. Pi also checks for updates every time we start or reload it:
 
-Pi agent after restart / reload showing all available context, skills, prompts and extensions
+*Pi agent after restart / reload showing all available context, skills, prompts and extensions*
 ![Pi agent - reload](images/pi-update.png)
 
 ## 4. The Execution Flow
@@ -391,32 +397,33 @@ Command for the Pi agent in the command line:
 ```
 
 ```text
-Pi Agent’s workflow 
+      Pi Agent’s workflow 
 
-simplified mental map:
-          USER
-           │
-           ▼ Pi
-           │
- ┌─────────┴─────────┐
- │                   │ 
-AGENTS.md        Skills 
-rulesPDF         skill
- │                   │
- └─────────┬─────────┘
-           │
-           ▼ Extensions
- ┌─────────┼─────────┐
- ▼         ▼         ▼
-web tools  MCP     permissions
-           │
-           ▼ Result
+        simplified mental map:
+               USER
+                │
+                ▼ Pi
+                │
+      ┌─────────┴─────────┐
+      │                   │ 
+      AGENTS.md        Skills 
+      rulesPDF         skill
+      │                   │
+      └─────────┬─────────┘
+                │
+                ▼ Extensions
+      ┌─────────┼─────────┐
+      ▼         ▼         ▼
+   web tools   MCP     permissions
+                │
+                ▼ 
+              Result
 ```
 
 ## 5. System Architecture: Keeping it Clean
 In Pi, we can do everything completely our way. But going full punk is not desirable, and everything should have a certain order with an emphasis on clarity. Our Pi "architecture" with all our template prompts, skills and extensions could look something like this:
 
-**GLOBAL** - global Pi folder
+**GLOBAL** - global Pi folder:
 
 ```text
 ~/.pi/agent/
@@ -429,7 +436,7 @@ In Pi, we can do everything completely our way. But going full punk is not desir
 └── settings.json
 ```
 
-**PROJECT** - local Pi folder inside the project
+**PROJECT** - local Pi folder inside the project:
 
 ```text
 my_project/

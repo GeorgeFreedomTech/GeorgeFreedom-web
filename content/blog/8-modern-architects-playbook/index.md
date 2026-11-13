@@ -32,16 +32,26 @@ The process is methodical:
 
 * **Mission Visualization (Top-Down Mindset):** First, the entire mission is visualized. We create the architectural plan, defining all systems and their interactions. For this, tools like **Mermaid** are invaluable for creating the clear, version-controlled schematics that serve as our master plan.
 
-```mermaid
-graph TD
-    subgraph app["app/"]
-        A["models.py"] --> B["__init__.py"]
-        B --> C["sensors.py"]
-        B --> D["alerts.py"]
-    end
-
-    C --> E["main.py"]
-    D --> E
+```text
+       ┌──────────────┐
+       │  models.py   │
+       └──────┬───────┘
+              ▼
+       ┌──────────────┐
+       │ __init__.py  │
+       └──────┬───────┘
+              │
+       ┌──────┴───────┐
+       ▼              ▼
+┌────────────┐  ┌────────────┐
+│ sensors.py │  │ alerts.py  │
+└─────┬──────┘  └─────┬──────┘
+       │               │
+       └───────┬───────┘
+              ▼
+       ┌──────────────┐
+       │   main.py    │
+       └──────────────┘
 ```
 
 Notice the shape of the plan: we go down to the foundation first, then spread wide across independent modules, and only then bring everything together. We will come back to this shape later.
@@ -53,10 +63,10 @@ station-monitor
 ├── README.md
 ├── main.py
 └── app/
-    ├── __init__.py
-    ├── models.py
-    ├── sensors.py
-    └── alerts.py
+       ├── __init__.py
+       ├── models.py
+       ├── sensors.py
+       └── alerts.py
 ```
 
 * **Issuing the Directives:** Inside this empty structure, we write docstrings. These are not just comments; they are the mission parameters and operational objectives for both ourselves and our AI assistants. They define the purpose and responsibility of each module before implementation begins.

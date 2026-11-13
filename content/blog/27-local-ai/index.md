@@ -72,7 +72,7 @@ For basic work and building understanding, it makes sense to choose 2-3 models b
 * **llama3.1:8b:** a universal general model, ideal for queries, writing shorter texts and testing, working with files, and writing/checking code. Fast, a "workhorse," takes up about 5 GB.
 * **deepseek-r1:8b:** for deep reasoning, we can follow the "chain-of-thought," more complex logic, ideal for structured checking, planning, and analytical work. Slower, an "architect," takes up about 5 GB.
 
-Ollama - chat interface:
+*Ollama - chat interface:*
 ![Ollama interface](images/ollama-interface.png)
 
 In Ollama, models can be downloaded and installed in two ways.
@@ -117,7 +117,7 @@ First, we run Ollama and let it run in the background. Then we launch AnythingLL
 2. **model:** select a model (e.g., llama3.1)
 3. **context window:** I recommend increasing the size to 8K (8192)
 
-AnythingLLM settings:
+*AnythingLLM settings:*
 ![AnythingLLM Settings](images/anythingllm-settings.png)
 
 After opening the conversation window (chat), we set up our operational environment, the "workspace." These settings will then apply to all conversations within it. We go to "General appearance settings" and do the "chat settings." By default, every workspace is set to "chat" with permissions for RAG, viewing and summarizing provided documents, and downloading web pages.
@@ -144,12 +144,12 @@ for more active use with higher privileges
 * LLM temperature: higher = more creative, lower = more deterministic, for agent = 0.3-0.4
 * we can further specify the number of tools and the scope (limits) of permissions and access for the agent in "Agent Skills."
 
-AnythingLLM - agent skills configuration:
+*AnythingLLM - agent skills configuration:*
 ![AnythingLLM - Agent configuration](images/anythingllm-agent-settings.png)
 
 To use **RAG processing**, we upload our selected documents into the workspace. Once done, we can leverage the combined power of the model and our data and documents. The model thus has access to quality data and gains a more accurate context.
 
-AnythingLLM - inserting documents for RAG:
+*AnythingLLM - inserting documents for RAG:*
 ![AnythingLLM - RAG processing](images/anythingllm-rag-processing.png)
 
 *Note: when using AnythingLLM with local models, our engine (Ollama runtime with models) must always be running.*
@@ -197,7 +197,7 @@ ollama launch pi --model llama3.1
 ```
 
 ![Pi agent - interface](images/pi-interface-overview.png)
-Pi agent - interface & overview
+*Pi agent - interface & overview*
 
 3. **Testing (after launch):** we give the agent a simple command using common language whose execution can be easily verified - e.g.
 
@@ -205,7 +205,7 @@ Pi agent - interface & overview
 list all files in this folder
 ```
 
-Pi agent - **agent loop**
+*Pi agent - **agent loop***
 ![Pi agent - test task](images/pi-test-task.png)
 
 4. **Verification:** If the agent performs the action correctly in the terminal, which we will verify, we can celebrate - we’ve just seen a functional agent loop in practice.
@@ -221,7 +221,7 @@ pi
 /quit
 ```
 
-Pi agent - started with "pi" command (Ollama running in the background)
+*Pi agent - started with "pi" command (Ollama running in the background)*
 ![Pi agent start](images/pi-start.png)
 
 #### Permissions and limitations of the "Pi" agent:

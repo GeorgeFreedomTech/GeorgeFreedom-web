@@ -194,13 +194,23 @@ To ensure the file serves its purpose as a cognitive anchor, it should have a lo
 #### 2.1. The Tactical Skeleton (Logical Flow)
 Do not organize alphabetically. Organize by priority of survival:
 
-```mermaid
-graph TD
-    A[Data Preservation] --> B[Orientation]
-    B --> C[Action]
+```text
+┌─────────────────────┐
+│  Data Preservation  │
+└─────────────────────┘
+        │
+        ▼
+┌─────────────────────┐
+│     Orientation     │
+└─────────────────────┘
+        │
+        ▼
+┌─────────────────────┐
+│       Action        │
+└─────────────────────┘
 ```
 
-> A. ⚠️ CRITICAL SAFETY PROTOCOLS (Top Priority) 
+> **A. ⚠️ CRITICAL SAFETY PROTOCOLS (Top Priority)**
 
 Before the user executes a single command, they must know what not to do to avoid catastrophe.
 
@@ -208,13 +218,13 @@ Before the user executes a single command, they must know what not to do to avoi
 
 * **OPSEC:** What to do if confiscation or compromise is imminent.
 
-> B. 🗺️ TERRAIN MAP (Directory Tree) 
+> **B. 🗺️ TERRAIN MAP (Directory Tree)**
 
 A visual map of the drive. In high-stress situations, browsing through folders blindly wastes time.
 
 * **Display:** Where the Intel (Knowledge) is stored, where the Tools are, and where the Boot Images reside.
 
-> C. 🖥️ BOOT SYSTEMS (Independent OS) 
+> **C. 🖥️ BOOT SYSTEMS (Independent OS)**
 
 For situations where you need to bypass the host OS entirely.
 
@@ -226,7 +236,7 @@ Structure per System:
 
 * **Deployment Trigger:** When to use it (e.g., "Use when the host PC is untrusted or infected").
 
-> D. 🛠️ LIVE TOOLS (Cross-Platform Arsenal) 
+> **D. 🛠️ LIVE TOOLS (Cross-Platform Arsenal)**
 
 The largest section. Group tools by Mission Profile, not by name.
 
@@ -244,7 +254,7 @@ For each tool include:
 
 * **Kick-start Guide:** A simplified "Click here -> Select this -> Done" instruction.
 
-> E. 🚑 TROUBLESHOOTING (Field Repair) 
+> **E. 🚑 TROUBLESHOOTING (Field Repair)** 
 
 A list of things that will inevitably go wrong when you need them most.
 

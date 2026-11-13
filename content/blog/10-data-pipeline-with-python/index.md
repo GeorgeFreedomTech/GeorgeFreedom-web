@@ -71,6 +71,25 @@ Let’s break down the role of each tool in our data pipeline.
 ## The Strategic Workflow: The ETL Pipeline
 The strategy is clear. We follow a bottom-up operational procedure, effectively building an ETL (Extract, Transform, Load) Pipeline:
 
+```text
+┌──────────────────────────┐
+│       I. EXTRACT         │
+│   Raw Data & Signals     │
+└────────────┬─────────────┘
+                │
+                ▼
+┌──────────────────────────┐
+│      II. TRANSFORM       │
+│   NumPy → Pandas         │
+└────────────┬─────────────┘
+                │
+                ▼
+┌──────────────────────────┐
+│   III. LOAD / VISUALIZE  │
+│ Matplotlib / Streamlit   │
+└──────────────────────────┘
+```
+
 * **I. Extract (Raw Data):** We capture the raw signal using Python’s requests library (for APIs) or Pandas’ I/O tools (for files/DBs), bringing the data into our environment.
 
 * **II. Transform (The Processing):** We reshape the data structure with NumPy if needed, then move up to Pandas to clean, filter, and aggregate the specific signals we need.

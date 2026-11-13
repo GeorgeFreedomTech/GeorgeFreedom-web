@@ -15,7 +15,7 @@ tags = ["python", "physical-computing", "tutorial"]
 
 We are going to breathe the soul of code to into its metal body - which means to bring your **ESP32 microcontroller** to life and open the door to the world of the **Internet of Things** (IoT), sensors, and robotics. The first critical step is uploading the **MicroPython** firmware, the "mission OS" that will allow you to command your hardware using the simple and powerful Python language.
 
-One of ESP32 family of microcontrollers
+*One of ESP32 family of microcontrollers*
 ![ESP32 microcontroller](images/esp32-microcontroller.jpg)
 
 There are two primary paths to achieve this. We’ll explore both:
@@ -33,7 +33,7 @@ Navigate to the official [Micropython archives](https://www.micropython.org/down
 * Locate the latest stable version of the firmware (marked as "Stable") and download the .bin file.
 * Save it to a directory where you can easily find it.
 
-The exact type specification of a microcontroller can be seen etched onto metal cover:
+*The exact type specification of a microcontroller can be seen etched onto metal cover:*
 ![Microcontroller specification](images/microcontroller-specification.jpg)
 
 ### 2. Install USB-to-UART Bridge Drivers
@@ -70,7 +70,7 @@ We can now choose our launch method.
 ## Step 2: Choosing Your Launch Method
 Select the method that best suits your mission profile.
 
-ESP32 ready to be connected through a USB cable:
+*ESP32 ready to be connected through a USB cable:*
 ![ESP32 and USB cable](images/esp32-usb-cable.jpg)
 
 ### Launch Method A: The Thonny IDE (The GUI Approach)
@@ -89,10 +89,10 @@ This method is ideal if you’re just starting or want to get firmware on the bo
 
 Thonny will handle the erasing and flashing process. Close the window when it’s done.
 
-IDE Thonny - Tools - Options - Interpreter tab:
+*IDE Thonny - Tools - Options - Interpreter tab:*
 ![Thonny IDE](images/thonny-ide.jpg)
 
-IDE Thonny - install / update MicroPython on ESP32:
+*IDE Thonny - install / update MicroPython on ESP32:*
 ![Micropython installation](images/thonny-micropython-installation.jpg)
 
 ✅ Method A Debriefing:
@@ -145,7 +145,7 @@ MicroPython v1.2x.x on ESP32-D0WD-V3 Type "help()" for more information.
 >>>
 ```
 
-Type "help()" at the >>> prompt and press Enter. You should see a welcome message from MicroPython.
+Type "help()" at the >>> prompt and press Enter. You should see a welcome message from MicroPython:
 
 ![MicroPython Welcome message](images/micropython-message.jpg)
 
