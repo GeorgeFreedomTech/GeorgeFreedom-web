@@ -526,7 +526,7 @@ b {
 
 
 /* ==================================================
-   11. Code Blocks and Mermaid Diagrams
+   11. Code Blocks
    ================================================== */
 
 /* Code block container */
@@ -544,25 +544,6 @@ pre code {
     padding: 0;
     white-space: inherit;
     overflow-wrap: inherit;
-}
-
-/* Center Mermaid diagrams */
-.mermaid {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-/* Mermaid diagram lines — dark theme */
-[data-theme="dark"] .mermaid .edgePaths .path,
-[data-theme="dark"] .mermaid .flowchart-link {
-    stroke: #c8c0b4;
-}
-
-/* Mermaid diagram arrow markers — dark theme */
-[data-theme="dark"] .mermaid .marker path {
-    fill: #c8c0b4;
-    stroke: #c8c0b4;
 }
 
 
