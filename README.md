@@ -70,8 +70,7 @@ GeorgeFreedom-web/
     ├── css/
     │   └── style.css
     └── js/
-        ├── theme.js
-        └── mermaid.js
+        └── theme.js
 ```
 
 Zola generates the final website into the "public/" directory during the build process. This directory contains generated output and is not maintained as source content.
