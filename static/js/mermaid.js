@@ -1,7 +1,8 @@
 
-import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+import mermaid from './mermaid/mermaid.esm.min.mjs';
 
 document.addEventListener('DOMContentLoaded', async () => {
+
     const blocks = document.querySelectorAll(
         'pre > code[data-lang="mermaid"]'
     );
@@ -15,11 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         container.className = 'mermaid';
         container.textContent = block.textContent;
 
-        const target = block.tagName.toLowerCase() === 'code'
-            ? block.parentElement
-            : block;
-
-        target.replaceWith(container);
+        block.parentElement.replaceWith(container);
         diagrams.push(container);
     });
 
