@@ -25,7 +25,7 @@ Hosted on **GitHub Pages** and deployed automatically through **GitHub Actions**
 - **Responsive Design:** Adapted for desktop, tablet, and mobile screens.
 - **Light & Dark Mode:** User-selectable color themes.
 - **Content Organization:** Blog articles and tutorials organized with tags and RSS feeds.
-- **Code & Diagrams:** Syntax highlighting and Mermaid diagram support.
+- **Code:** Syntax highlighting and support.
 - **Automated Deployment:** Every commit to the main branch triggers a build and deployment through GitHub Actions.
 
 ## Architecture
