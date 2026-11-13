@@ -65,9 +65,9 @@ Every program on this drive survived a rigorous selection process. Just because 
 ### 2. Kali Linux vs. Tails (Force vs. Stealth)
 **Why two systems?** Because they serve opposing tactical goals. It’s a redundancy against failure.
 
-**Tails** is silent, hidden, and amnesic. It is the "ghost" for situations requiring secure communication and disappearing without a trace.
+* **Tails** is silent, hidden, and amnesic. It is the "ghost" for situations requiring secure communication and disappearing without a trace.
 
-**Kali** is loud, aggressive, and packed with tools. It is the active "mechanic" for repair, penetration, and reconnaissance.
+* **Kali** is loud, aggressive, and packed with tools. It is the active "mechanic" for repair, penetration, and reconnaissance.
 
 **Detailed Operational Profiles (Tails and Kali)**
 #### 👻 2.1. TAILS: Operation Mode "GHOST"
@@ -83,25 +83,19 @@ A completely isolated, anonymous operating system that runs solely in RAM. It ig
 ##### 2.1.2. Interaction with the Host (Target) PC
 Tails behaves differently depending on the machine you connect it to:
 
-🪟 WINDOWS (Standard):
+### Operating System Access
 
-* Access: ✅ FULL. If the internal drive is not encrypted (BitLocker), Tails can mount it. You can view documents, photos, and system files.
+| System | Access | Capabilities / Limitations |
+|---|---|---|
+| 🪟 **Windows (standard)** | ✅ Full* | Can access documents, photos, and system files on unencrypted drives. Useful for data recovery. |
+| 🐧 **Linux (Ext4)** | ⚠️ Conditional | Native filesystem support. Setting an Administration Password at startup enables administrative operations and write access to internal drives. |
+| 🔒 **Encrypted drives (BitLocker / LUKS)** | 🔒 Locked | Data remains inaccessible without the corresponding decryption key or password. |
+| 🍏 **macOS (modern)** | ⚠️ Limited | FileVault encryption and APFS compatibility can prevent or restrict access to internal storage. |
+| 🍎 **macOS (Apple Silicon)** | ⛔ Not supported | Standard Tails builds target x86-64, not ARM. They cannot boot natively on M1/M2/M3 Macs. |
 
-* Use Case: Data rescue or extracting information without leaving forensic evidence.
+**Important:** Tails prioritizes security over unrestricted disk access. Internal drives are not automatically accessible in every configuration.
 
-🐧 LINUX (Standard - Ext4):
-
-* Access: ✅ POSSIBLE (With Admin Password). Tails natively reads Linux filesystems. However, to mount internal drives with write access, you must set an Administration Password at the Tails welcome screen. Without it, Tails often mounts internal drives as read-only for security.
-
-🪟 WINDOWS (BitLocker) / 🐧 LINUX (LUKS):
-
-* Access: 🔒 LOCKED. You can see the drive partition, but without the decryption key/password, the data is inaccessible noise
-
-🍏 MACOS (Modern):
-
-* Access: 🔒 FORTRESS. Due to FileVault encryption and the APFS filesystem, accessing data on a modern Mac’s internal drive is virtually impossible.
-
-* Boot: On newer Macs (Apple Silicon M1/M2/M3), standard Tails builds will not boot due to the different processor architecture (ARM).
+*Access to Windows drives depends on encryption, filesystem compatibility, and mount permissions.
 
 #### ⚔️ 2.2. KALI LINUX: Operation Mode "SWORD"
 An offensive operating system running with full root privileges. It is designed for breaking, fixing, diagnosing, and dominating hardware. On a network, it is "loud" and visible (not anonymous by default).
@@ -114,29 +108,18 @@ An offensive operating system running with full root privileges. It is designed 
 **Persistence:** Unlike Tails, Kali does not aggressively wipe RAM on shutdown and can be configured to save changes.
 
 ##### 2.2.2. Interaction with the Host (Target) PC
-🪟 WINDOWS (Standard):
+### Operating System Access
 
-* Access: ✅ TOTAL. Kali does not ask for the Windows user password. It mounts the drive, allowing you to copy, delete, or modify any file (including system files like System32 or registry hives).
+| System | Access | Capabilities / Limitations |
+|---|---|---|
+| 🪟 **Windows (standard)** | ✅ Full | No Windows password required. Read, modify, or delete files, including system files and registry hives. |
+| 🔒 **Encrypted drives (BitLocker / FileVault)** | 🔒 Locked | Requires the encryption key. A bit-by-bit disk image can be created for potential offline password recovery attempts. |
+| 📡 **Wi-Fi networks** | ⚡ Advanced | Monitor Mode and packet injection enable wireless traffic analysis and Wi-Fi security testing. Requires compatible hardware. |
+| 🐧 **Linux (Ext4 / XFS / Btrfs)** | ✅ Full (root) | Bypasses standard file permissions. Can access private files, reset passwords, modify configurations, and extract SSH keys. |
+| 🍏 **macOS (Intel, no FileVault)** | ⚠️ Limited | APFS is generally readable, but write support is experimental or unsupported. Older HFS+ drives offer better compatibility. |
+| 🍎 **macOS (Apple Silicon)** | ⛔ Not directly supported | Standard Kali USB images target x86-64, not ARM. Apple Silicon also requires specific external-boot authorization. |
 
-🪟 ENCRYPTED DRIVES (BitLocker / FileVault):
-
-* Access: 🔒 LOCKED. Without the key, the drive is sealed. However, you can create a bit-by-bit disk image of the encrypted partition for later brute-force attacks on a more powerful machine.
-
-📡 NETWORKS (Wi-Fi):
-
-* Capability: Can switch the Wi-Fi card into "Monitor Mode" (sniffing traffic) and perform packet injection attacks to crack Wi-Fi passwords. This is impossible in standard Windows without specialized drivers.
-
-🐧 LINUX (Standard - Ext4/XFS/Btrfs):
-
-* Access: ✅ TOTAL (ROOT). Kali runs as root (superuser). It ignores the file permission settings of the host system. Even if a folder is set to "private" (chmod 700), Kali opens it. You can reset root passwords (chroot), edit server configs, or extract SSH keys.
-
-🍏 MACOS (Intel - No FileVault):
-
-* Access: ⚠️ LIMITED / READ-ONLY. Apple uses the APFS filesystem. Modern Kali versions can usually read it (view/copy files), but writing to APFS is experimental, risky, or unsupported. Older Macs (HFS+) are fully accessible.
-
-🍎 MACOS (Apple Silicon - M1, M2, M3…):
-
-* Access: ⛔ CRITICAL FAILURE. The standard Kali ISO on your USB is for x64 (Intel/AMD) processors. Modern Macs use ARM chips. Your USB drive will not boot. Furthermore, booting from USB on Silicon Macs requires specific authorization in Recovery Mode. Do not waste time attempting this in a crisis.
+**Important:** Standard Kali Live USB is not a universal solution for every system. Hardware compatibility, disk encryption, filesystem support, and boot security determine the actual level of access.
 
 ### 3. VeraCrypt (The Vault)
 **Why:** The balanced universal standard. BitLocker is Windows-only; FileVault is Apple-only. VeraCrypt runs on everything (Win/Lin/Mac). The file container `.hc` is easy to backup and transport.
@@ -154,11 +137,11 @@ An offensive operating system running with full root privileges. It is designed 
 ### 6. The Python Ecosystem (VSCodium + MiniPython + Thonny)
 **Why:** We live in a code-driven world. The ability to program is the modern literacy equivalent of reading and writing in the Middle Ages - it represents the power to actively solve problems. Python is the ideal "construction kit" for this.
 
-**VSCodium:** A comfortable IDE stripped of telemetry.
+* **VSCodium:** A comfortable IDE stripped of telemetry.
 
-**MiniPython:** A clean engine (official Python for embedded systems) that doesn’t depend on the host PC.
+* **MiniPython:** A clean engine (official Python for embedded systems) that doesn’t depend on the host PC.
 
-**Thonny:** The backup chute. If everything else fails, Thonny will run. Moreover, it bridges the gap to the physical world, allowing me to program hardware (IoT/ESP32) in the field.
+* **Thonny:** The backup chute. If everything else fails, Thonny will run. Moreover, it bridges the gap to the physical world, allowing me to program hardware (IoT/ESP32) in the field.
 
 ### 7. Nmap (Network Intelligence)
 **Why not Wireshark?** The Pareto Principle (80/20). Wireshark (packet analysis) is too granular and often blind in the age of HTTPS.
@@ -167,13 +150,13 @@ An offensive operating system running with full root privileges. It is designed 
 ### 8. The Essential Utilities (Quality of Life)
 **Why:** In a crisis, friction is the enemy. You don’t want to fight the operating system just to open a manual or retrieve a password. These small, portable tools solve specific, critical friction points that standard Windows installations often fail to address.
 
-**7-Zip (The Universal Key):** Windows struggles with non-standard archives like .tar.gz or .rar. 7-Zip handles everything. More importantly, it allows for quick, robust AES-256 encryption of files for transport without needing to mount the full VeraCrypt volume.
+* **7-Zip (The Universal Key):** Windows struggles with non-standard archives like .tar.gz or .rar. 7-Zip handles everything. More importantly, it allows for quick, robust AES-256 encryption of files for transport without needing to mount the full VeraCrypt volume.
 
-**Sumatra PDF (The Library Interface):** Why not Adobe? Because speed matters. Sumatra is instant and lightweight. Crucially, it supports .epub and .mobi formats, transforming the computer into a universal e-reader for the e-books and manuals.
+* **Sumatra PDF (The Library Interface):** Why not Adobe? Because speed matters. Sumatra is instant and lightweight. Crucially, it supports .epub and .mobi formats, transforming the computer into a universal e-reader for the e-books and manuals.
 
-**Scrcpy (The Hardware Bridge):** A smartphone with a broken screen usually becomes a useless brick, cutting you off from communication. Scrcpy allows you to view and control an Android phone via PC over USB. It turns a hardware disaster into a manageable inconvenience.
+* **Scrcpy (The Hardware Bridge):** A smartphone with a broken screen usually becomes a useless brick, cutting you off from communication. Scrcpy allows you to view and control an Android phone via PC over USB. It turns a hardware disaster into a manageable inconvenience.
 
-**KeePassXC (The Keyring):** Human memory is fallible under stress. Relying on it for complex passwords is a single point of failure. KeePassXC manages the keys to your digital life in an offline, encrypted database that is cross-compatible with the Tails OS instance on this very drive.
+* **KeePassXC (The Keyring):** Human memory is fallible under stress. Relying on it for complex passwords is a single point of failure. KeePassXC manages the keys to your digital life in an offline, encrypted database that is cross-compatible with the Tails OS instance on this very drive.
 
 ## Logistics Note: The Cost of Independence
 It is important to emphasize that **every software tool listed here is completely free (for personal use)**. You do not need a budget for licenses. The barrier to entry is not financial; it is intellectual. The true investment is your time, research, and the discipline to execute the plan.
@@ -197,13 +180,13 @@ Therefore, the optimal strategy is to build **two identical EDC-USB drives**. Th
 In a crisis - whether due to time pressure, fatigue, stress, or a hostile environment—humans suffer from "tunnel vision." Memory and cognitive functions degrade. We need compensation. The `README_EMERGENCY.md` file is not just "documentation." It is an **operational checklist**. It is designed to replace memory when you need to focus your brainpower on solving the problem, not on remembering how to operate a tool.
 
 ### 1. Key features for orientation under pressure:
-**Universal Readability:** Markdown (`.md`) ensures legibility in Notepad on Windows 98, a Linux terminal (`cat`), or a modern IDE.
+* **Universal Readability:** Markdown (`.md`) ensures legibility in Notepad on Windows 98, a Linux terminal (`cat`), or a modern IDE.
 
-**"Action-Reaction" Structure:** No theory. Only direct instructions: "To do X -> Run file Y -> Click here."
+* **"Action-Reaction" Structure:** No theory. Only direct instructions: "To do X -> Run file Y -> Click here."
 
-**Cross-Platform Routing:** Immediately directs you to the correct executable (Win/Lin/Mac) so you don’t waste time testing incompatible files.
+* **Cross-Platform Routing:** Immediately directs you to the correct executable (Win/Lin/Mac) so you don’t waste time testing incompatible files.
 
-**Safety Breaker:** The very first lines remind you of critical protocols (Dismount VeraCrypt) that might be forgotten in haste, preventing data corruption. This file is the difference between "having the tools" and "having immediate operational capability."
+* **Safety Breaker:** The very first lines remind you of critical protocols (Dismount VeraCrypt) that might be forgotten in haste, preventing data corruption. This file is the difference between "having the tools" and "having immediate operational capability."
 
 ### 2. The Blueprint: Designing the README_EMERGENCY.md
 To ensure the file serves its purpose as a cognitive anchor, it should have a logic structure. Here is the template for building your own.
@@ -217,59 +200,59 @@ graph TD
     B --> C[Action]
 ```
 
-A. ⚠️ CRITICAL SAFETY PROTOCOLS (Top Priority) 
+> A. ⚠️ CRITICAL SAFETY PROTOCOLS (Top Priority) 
 
 Before the user executes a single command, they must know what not to do to avoid catastrophe.
 
-**Data Corruption:** Explicit instructions on when it is safe to remove the drive (Dismounting VeraCrypt volumes).
+* **Data Corruption:** Explicit instructions on when it is safe to remove the drive (Dismounting VeraCrypt volumes).
 
-**OPSEC:** What to do if confiscation or compromise is imminent.
+* **OPSEC:** What to do if confiscation or compromise is imminent.
 
-B. 🗺️ TERRAIN MAP (Directory Tree) 
+> B. 🗺️ TERRAIN MAP (Directory Tree) 
 
 A visual map of the drive. In high-stress situations, browsing through folders blindly wastes time.
 
-**Display:** Where the Intel (Knowledge) is stored, where the Tools are, and where the Boot Images reside.
+* **Display:** Where the Intel (Knowledge) is stored, where the Tools are, and where the Boot Images reside.
 
-C. 🖥️ BOOT SYSTEMS (Independent OS) 
+> C. 🖥️ BOOT SYSTEMS (Independent OS) 
 
 For situations where you need to bypass the host OS entirely.
 
 Structure per System:
 
-**Name:** (e.g., Tails, Kali).
+* **Name:** (e.g., Tails, Kali).
 
-**Purpose:** One sentence (e.g., "For total anonymity" or "For offensive repair").
+* **Purpose:** One sentence (e.g., "For total anonymity" or "For offensive repair").
 
-**Deployment Trigger:** When to use it (e.g., "Use when the host PC is untrusted or infected").
+* **Deployment Trigger:** When to use it (e.g., "Use when the host PC is untrusted or infected").
 
-D. 🛠️ LIVE TOOLS (Cross-Platform Arsenal) 
+> D. 🛠️ LIVE TOOLS (Cross-Platform Arsenal) 
 
 The largest section. Group tools by Mission Profile, not by name.
 
-**Sector 1:** VAULT & ACCESS (VeraCrypt, KeePass) - *How do I access my documents?*
+* **Sector 1:** VAULT & ACCESS (VeraCrypt, KeePass) - *How do I access my documents?*
 
-**Sector 2:** RECOVERY & REPAIR (DMDE, TestDisk) - *How do I salvage deleted files?*
+* **Sector 2:** RECOVERY & REPAIR (DMDE, TestDisk) - *How do I salvage deleted files?*
 
-**Sector 3:** RECON & NETWORK (Nmap, Wireshark) - *Who else is on this network?*
+* **Sector 3:** RECON & NETWORK (Nmap, Wireshark) - *Who else is on this network?*
 
-**Sector 4:** INTEL LIBRARY (Maps, PDFs) - *How do I open the topo map without internet?*
+* **Sector 4:** INTEL LIBRARY (Maps, PDFs) - *How do I open the topo map without internet?*
 
 For each tool include:
 
-**Path to Executable:** Clear location for Windows (.exe), Linux (binary), and Mac (.app).
+* **Path to Executable:** Clear location for Windows (.exe), Linux (binary), and Mac (.app).
 
-**Kick-start Guide:** A simplified "Click here -> Select this -> Done" instruction.
+* **Kick-start Guide:** A simplified "Click here -> Select this -> Done" instruction.
 
-E. 🚑 TROUBLESHOOTING (Field Repair) 
+> E. 🚑 TROUBLESHOOTING (Field Repair) 
 
 A list of things that will inevitably go wrong when you need them most.
 
-**Boot Failures:** What to do if the PC ignores the USB (Secure Boot settings).
+* **Boot Failures:** What to do if the PC ignores the USB (Secure Boot settings).
 
-**Permission Errors:** How to handle chmod +x on Linux or Gatekeeper on Mac.
+* **Permission Errors:** How to handle chmod +x on Linux or Gatekeeper on Mac.
 
-**Hardware Issues:** What if the network card isn’t detected? (Driver fallbacks).
+* **Hardware Issues:** What if the network card isn’t detected? (Driver fallbacks).
 
 ---
 Cyber EDC Structure:
@@ -282,23 +265,23 @@ Cyber EDC Structure:
 ├── tails.img (The Ghost: Bootable OS for anonymity) 
 │ 
 ├── _KNOWLEDGE/ (PASSIVE: The Library) 
-│ ├── Books/ (PDF, ePUB..)  
-│ ├── Manuals/ (PDF: Medical, Survival, Chem, Docs) 
-│ └── Maps/ (Offline Topo Maps + Cruiser App) 
+│   ├── Books/ (PDF, ePUB..)  
+│   ├── Manuals/ (PDF: Medical, Survival, Chem, Docs) 
+│   └── Maps/ (Offline Topo Maps + Cruiser App) 
 │ 
 └── _TOOLS/ (ACTIVE: The Workshop) 
-  ├── VeraCrypt/ (Key to the Vault - Win/Lin/Mac) 
-  ├── DataRecovery/ (DMDE for all systems) 
-  ├── Mobile/ (Scrcpy) 
-  ├── Networking/ (Nmap Scanner) 
-  ├── Privacy/ (Tor Browser) 
-  ├── Security/ (KeyPassXC) 
-  ├── Utilities/ (7-zip, SumatraPDF) 
-  │ 
-  ├── VSCodium/ (Primary IDE) 
-  ├── Thonny/ (Backup Editor & HW Hacking) 
-  ├── _MiniPython/ (Independent Python Engine) 
-  └── _my_scripts/ (Custom automation tools)
+    ├── VeraCrypt/ (Key to the Vault - Win/Lin/Mac) 
+    ├── DataRecovery/ (DMDE for all systems) 
+    ├── Mobile/ (Scrcpy) 
+    ├── Networking/ (Nmap Scanner) 
+    ├── Privacy/ (Tor Browser) 
+    ├── Security/ (KeyPassXC) 
+    ├── Utilities/ (7-zip, SumatraPDF) 
+    │ 
+    ├── VSCodium/ (Primary IDE) 
+    ├── Thonny/ (Backup Editor & HW Hacking) 
+    ├── _MiniPython/ (Independent Python Engine) 
+    └── _my_scripts/ (Custom automation tools)
 ```
 
 ## The Output: Operational Readiness
