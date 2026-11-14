@@ -118,7 +118,7 @@ My GitHub portfolio, filled with AI-assisted projects, no longer says, "Look how
 
 We learn to program deeply not so we can spend our lives in the trenches writing "for" loops, but to earn the freedom not to. We master the fundamentals to gain the authority, intuition, and capability to focus on strategy, to lead, and to architect.
 
----
+—
 
 *And that is the new, true role of an engineer in the AI war room.*
 
