@@ -42,7 +42,7 @@ Emphasis is placed on the clarity of individual processes with the minimum neces
 
 The scanner itself (a basic ESP32 microcontroller - read [my article](/ignition-sequence-how-to-flash-micropython-onto-your-esp32)) is expendable. Communication with the scanner during data collection is strictly visual via a single LED - no typing or confirmation required. The scan is triggered by a simple physical button.
 
-ESP32 - scanning in progress ..
+*ESP32 - scanning in progress ..*
 ![ESP32 Wifi scanning](images/esp32-wifi-scanning.jpg)
 
 Crucially, I do not encrypt the scan results on the device. Why? because without the "Key"-the knowledge of where and when the scanning took place-the data is useless. This key is held only in the scout’s head or kept separate from the device (Separation of Concerns).
@@ -65,7 +65,7 @@ For actual field reconnaissance, the **device needs some power source** (e.g. a 
 ## PART II: The Architecture & Build Log
 For this project, I chose the bottom-up approach I typically use for web applications. This means starting from the data, choosing the necessary processing technologies based on that data, and gradually moving up to analysis and visualization.
 
-Build Log Workflow
+*Build Log Workflow*
 ![Build Log Sequence](images/build-log-overview.jpg)
 
 ### 2.1 The Agent: ESP32 Firmware
@@ -84,10 +84,10 @@ The first step is data acquisition (the CSV file). This must be saved into the c
 
 I retrieve and transform data from the database using Pandas for use in the overview and graphical elements of the Streamlit application (files analyser.py, vizualiser.py, and helper functions in utils.py). The application itself is encapsulated in a function within app.py, where its final structure and layout are assembled. Running this function launches the dashboard. This design also facilitates **easy deployment to the web (Streamlit Community Cloud)**.
 
-Streamlit HQ - Dashboard:
+*Streamlit HQ - Dashboard:*
 ![Streamlit HQ](images/silent-scout-streamlit-hq.png)
 
-Streamlit Log:
+*Streamlit Log:*
 ![Streamlit Log Details](images/silent-scout-log.png)
 
 ### 2.3 The Cost of Automation (And Why I Cut It Out)
