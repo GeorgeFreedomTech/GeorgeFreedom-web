@@ -35,4 +35,4 @@ Here’s the news: we are living in a **transitional period**. We need resilient
 
 —
 
-Because only such systems (and the businesses built upon them) will survive the years to come.
+*Because only such systems (and the businesses built upon them) will survive the years to come.*
