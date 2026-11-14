@@ -9,7 +9,7 @@ path = "ai-resistant-skills-a-practical-framework-for-your-career-in-the-ai-era"
 image = "images/AI-resistant-skills.webp"
 
 [taxonomies]
-tags = ["career-and-skills", "pai-and-society", "ai-assisted-development"]
+tags = ["career-and-skills", "ai-and-society", "ai-assisted-development"]
 +++
 
 Which fields will remain AI-resistant or "future-proof"? What career direction should we focus on? Which specializations are truly worth investing our time and effort in? What - and how deeply - should we study? … And most critically, how do we figure all this out in a rapidly changing technological landscape?
