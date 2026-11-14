@@ -45,7 +45,9 @@ So, I decided to test my idea and deploy it globally.
 
 **My goal:** Develop a downloadable, print-ready product that anyone can fabricate at home and use immediately. I gave myself a strict timeline.
 
-*"A 4-day sprint."*
+```text
+"A 4-day sprint."
+```
 
 ## III. The Build: The "Maker" Stack
 Just like in software engineering, I started from the bottom - the product logic. I knew what I wanted to achieve, but I needed the infrastructure to deliver it. I chose AI @Gemini as my project assistent and co-pilot.
