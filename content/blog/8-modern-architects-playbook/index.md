@@ -217,7 +217,7 @@ This **T-shape strategy** - going bottom-up (from data to package assembly) firs
 ## Conclusion: The Architect’s Mandate
 This playbook is more than just a set of instructions; it’s a new operational doctrine. It defines a strategic shift where the developer’s primary value is no longer in the manual labor of implementation, but in the intellectual rigor of architecture, system design, and quality assurance. The AI is a powerful engine, but the human is the mission director - the one who charts the course, understands the objective, and bears the ultimate responsibility for success.
 
--
+—
 
 *This methodology isn’t about working less; it’s about working on what truly matters. Welcome to Mission Control.*
 
