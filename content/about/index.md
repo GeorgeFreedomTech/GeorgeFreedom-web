@@ -38,7 +38,7 @@ At the moment, I am based in Peru during a sabbatical. I continue teaching, buil
 I am preparing to return to Czechia in 04/2027 and am interested in opportunities where I can combine education, communication, practical problem-solving and technology - particularly where understanding a complex subject and making it useful to other people are both part of the job.
 
  
-Explore
+Explore:
  
 [Portfolio & Projects](https://dashboard.georgefreedom.com/)
  
