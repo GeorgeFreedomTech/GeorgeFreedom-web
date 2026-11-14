@@ -25,7 +25,7 @@ Teaching has become an important part of that process. I enjoy making complex su
 
 Technology is one of my main tools, but not an end in itself. I use Python, SQL, web technologies, data tools, AI and physical computing to explore ideas, build small practical systems and understand what these technologies can actually do. Many of these experiments eventually become teaching materials, tutorials, documentation or articles.
 
-![Peruvian adventures](images/GeorgeFreedom-Jiri-Svoboda-peru.jpeg)
+![Peruvian adventures](images/GeorgeFreedom-Jiri-Svoboda-Peru.jpeg)
 
 My earlier work in environmental data analysis taught me to work with complex information, deal with imperfect real-world data and communicate technical findings to non-technical people. Running my own e-commerce business taught me about customers, products, money and the practical consequences of decisions. Education taught me how to structure knowledge and help other people move forward.
 
