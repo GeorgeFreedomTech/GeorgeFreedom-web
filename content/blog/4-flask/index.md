@@ -62,7 +62,9 @@ This approach forces you to understand the components you’re using and make co
 ## Ready to Build Your Own Mission Control HQ?
 I hope this overview gives you a clear map for exploring Flask. 
 
-If you’re ready and want to start building ➡️ Explore more:
+If you’re ready and want to start building 
+
+➡️ Explore more:
 
 [Flask Apps & Architecture](https://github.com/GeorgeFreedomTech/Flask-Apps-Architecture-Course)
 
