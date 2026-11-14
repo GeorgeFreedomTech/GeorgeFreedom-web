@@ -260,7 +260,9 @@ Templates are used for repeatedly requested actions and instructions on how to d
 
 Example:
 
-*"Analyze this Python file. Find bugs, suggest fixes and explain them to me"*
+```text
+Analyze this Python file. Find bugs, suggest fixes and explain them to me.
+```
 
 Instead of repeatedly typing the same instructions for handling (essentially a set of operations) a given file, we create a template to help with explanation and understanding. A template is just a set of instructions in a .md file in "prompts" folder. The name of the md file becomes a name of a new custom prompt. And we can make it more useful by including arguments - see how to set it up below:
 
