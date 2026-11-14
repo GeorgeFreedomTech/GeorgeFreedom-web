@@ -73,6 +73,4 @@ Včera jsem naštípal dříví. (Yesterday I chopped the wood. – Perfective a
 
 *And in my opinion, it’s absolutely worth it.*
 
-➡️ Get inspired:
-
-* [My "Spanish" journey](https://spanish.georgefreedom.com/)
+➡️ Get inspired: [My "Spanish" journey](https://spanish.georgefreedom.com/)
