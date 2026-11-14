@@ -62,6 +62,4 @@ Be prepared for some initial interference (mixing up words). Don’t see it as a
 
 —
 
-➡️ Get inspired:
-
-* [My "Spanish" journey](https://spanish.georgefreedom.com/)
+➡️ Get inspired: [My "Spanish" journey](https://spanish.georgefreedom.com/)
