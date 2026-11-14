@@ -27,7 +27,9 @@ You find an article you actually want to read. You click. And then it begins:
 
 By the time you’ve fought your way through the "user-friendly" interface, you’re exhausted. You don’t read the article; you skim it. The information leaves no trace. Your capacity to read (and enjoy it) and to deep focus (and learn) is gone.
 
-**Enough.**
+```text
+Enough.
+```
 
 I decided I’m done being a passive victim of engagement algorithms. I don’t want "relevant suggestions". I don’t want more recommendations "what’s best for me". I know what I want. And I don’t need anything else.
 
