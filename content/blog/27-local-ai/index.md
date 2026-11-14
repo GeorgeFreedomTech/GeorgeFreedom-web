@@ -122,10 +122,10 @@ First, we run Ollama and let it run in the background. Then we launch AnythingLL
 
 After opening the conversation window (chat), we set up our operational environment, the "workspace." These settings will then apply to all conversations within it. We go to "General appearance settings" and do the "chat settings." By default, every workspace is set to "chat" with permissions for RAG, viewing and summarizing provided documents, and downloading web pages.
 
-AnythingLLM - basic chat interface:
+*AnythingLLM - basic chat interface:*
 ![AnythingLLM - basic chat interface](images/anythingllm-chat.png)
 
-AnythingLLM - workplace settings:
+*AnythingLLM - workplace settings:*
 ![AnythingLLM - Workplace configuration](images/anythingllm-workplace-configuration.png)
 
 We essentially have two main options for **chat settings**:
@@ -196,8 +196,8 @@ a minimalist agent that uses a commandline interface (CLI). It comes with just *
 ollama launch pi --model llama3.1
 ```
 
+*Pi agent: interface & overview*
 ![Pi agent - interface](images/pi-interface-overview.png)
-*Pi agent - interface & overview*
 
 3. **Testing (after launch):** we give the agent a simple command using common language whose execution can be easily verified - e.g.
 
@@ -205,7 +205,7 @@ ollama launch pi --model llama3.1
 list all files in this folder
 ```
 
-*Pi agent - **agent loop***
+*Pi agent: agent loop*
 ![Pi agent - test task](images/pi-test-task.png)
 
 4. **Verification:** If the agent performs the action correctly in the terminal, which we will verify, we can celebrate - we’ve just seen a functional agent loop in practice.
@@ -221,7 +221,7 @@ pi
 /quit
 ```
 
-*Pi agent - started with "pi" command (Ollama running in the background)*
+*Pi agent: started with "pi" command (Ollama running in the background)*
 ![Pi agent start](images/pi-start.png)
 
 #### Permissions and limitations of the "Pi" agent:
