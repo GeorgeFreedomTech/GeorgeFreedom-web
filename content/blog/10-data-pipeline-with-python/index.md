@@ -76,14 +76,14 @@ The strategy is clear. We follow a bottom-up operational procedure, effectively 
 │       I. EXTRACT         │
 │   Raw Data & Signals     │
 └────────────┬─────────────┘
-                │
-                ▼
+             │
+             ▼
 ┌──────────────────────────┐
 │      II. TRANSFORM       │
 │   NumPy → Pandas         │
 └────────────┬─────────────┘
-                │
-                ▼
+             │
+             ▼
 ┌──────────────────────────┐
 │   III. LOAD / VISUALIZE  │
 │ Matplotlib / Streamlit   │
@@ -105,6 +105,4 @@ You might ask: *"Can’t I do this in Excel?"* Theoretically, yes. But in standa
 
 * Independence: With Python, you are building a scalable, adaptable system, free from licensing costs and vendor lock-in. You are building a tool that grows with your data, not one that chokes on it.
 
-➡️ Get inspired:
-
-* [Streamlit (Data Science & Visualization) Project](https://github.com/GeorgeFreedomTech/Peru-Regional-Telemetry)
+➡️ Get inspired: [Streamlit (Data Science & Visualization) Project](https://github.com/GeorgeFreedomTech/Peru-Regional-Telemetry)
