@@ -29,6 +29,4 @@ OOP, with the **organic programming** it enables, is a virtual playground where 
 
 .. if you want to move from just writing code to designing systems using OOP ..
 
-➡️ Get inspired:
-
-* [OOP in Python](https://github.com/GeorgeFreedomTech/Python-Advanced-Course)
+➡️ Get inspired: [OOP in Python](https://github.com/GeorgeFreedomTech/Python-Advanced-Course)
