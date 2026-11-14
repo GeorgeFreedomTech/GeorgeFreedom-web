@@ -64,9 +64,7 @@ I hope this overview gives you a clear map for exploring Flask.
 
 Are you ready to start building ?
 
-➡️ Explore more:
-
-[Flask Apps & Architecture](https://github.com/GeorgeFreedomTech/Flask-Apps-Architecture-Course)
+➡️ Explore more: [Flask Apps & Architecture](https://github.com/GeorgeFreedomTech/Flask-Apps-Architecture-Course)
 
 —
 
