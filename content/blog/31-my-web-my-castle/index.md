@@ -18,7 +18,7 @@ Anyone who has ever tried to resolve anything with an AI support bot (because, a
 
 ## Part I - Taking Back Digital Independence
 
-OK - so let's show some rebellious spirit, break the chains of digital slavery, try to escape slavery, and lay the foundations for our own **web kingdom**. It is time to take back our data and freedom. There are countless possibilities, but in fact there are only two:
+OK - so let's show some rebellious spirit, break the chains of digital thralldom, try to escape slavery, and lay the foundations for our own **web kingdom**. It is time to take back our data and freedom. There are countless possibilities, but in fact there are only two:
 
 1. Build my website on some platform (CMS) using predefined templates, blocks and tools, +- some use of AI.
 2. Build the website myself +- some use of AI.
