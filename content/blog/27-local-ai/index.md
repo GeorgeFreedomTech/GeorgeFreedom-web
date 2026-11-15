@@ -27,26 +27,18 @@ Let’s waste no time - grab a coffee and let’s get into it!
 
 ### Operational Minimum (Terminology):
 
-**token:** the basic building block for the model = a piece of text, or a part of a word.
-
-**context window:** the total volume of text (the whole conversation) the model can hold in its "memory."
-
-**System Prompt:** instructions for the model or agent, defining e.g., behavior and response style.
-
-**model:** or LLM (Large Language Model), acts as a text generator (based on probability).
-
-**quantization:** reduces the RAM/VRAM requirements of the model so it can be used even on a laptop.
-
-**agent:** uses the "model" and additionally has specific access, permissions, and a set of tools (web access, file creation, access to local folders…).
-
-**tool calling:** the model’s ability to recognize that it needs an external tool for a task and to prepare a request for the agent to use it (e.g., reading a disk, running a command).
-
-**UI / GUI:** user / graphical interface for more convenient work (e.g., chat windows and other wrappers).
-
-**RAG (Retrieval-Augmented Generation):** generally connecting the model with "my" documents and files so the model can use them.
-
-**embedding:** converting text into numerical vectors (used for RAG), allowing searches in documents by "meaning" rather than just keywords.
-
+| Term | Explanation |
+|---|---|
+| **Token** | The basic building block for the model = a piece of text, or a part of a word. |
+| **Context Window** | The total volume of text (the whole conversation) the model can hold in its "memory." |
+| **System Prompt** | Instructions for the model or agent, defining e.g., behavior and response style. |
+| **Model** | Or LLM (Large Language Model), acts as a text generator (based on probability). |
+| **Quantization** | Reduces the RAM/VRAM requirements of the model so it can be used even on a laptop. |
+| **Agent** | Uses the "model" and additionally has specific access, permissions, and a set of tools (web access, file creation, access to local folders…). |
+| **Tool Calling** | The model’s ability to recognize that it needs an external tool for a task and to prepare a request for the agent to use it (e.g., reading a disk, running a command). |
+| **UI / GUI** | User / graphical interface for more convenient work (e.g., chat windows and other wrappers). |
+| **RAG (Retrieval-Augmented Generation)** | Generally connecting the model with "my" documents and files so the model can use them. |
+| **Embedding** | Converting text into numerical vectors (used for RAG), allowing searches in documents by "meaning" rather than just keywords. |
  
 ## Phase 1: The Core System (Engine & Models)
 ### 1.1. Infrastructure: Choosing a Local Server

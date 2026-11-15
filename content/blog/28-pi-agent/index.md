@@ -77,19 +77,15 @@ We control the Pi agent through the terminal = using the command line. Sometimes
 ### 2.1. Prompts
 We enter prompts as a combination of a slash and the instruction text into the Pi cmd/terminal.
 
-**/help** - help
-
-**/hotkeys** - list of hotkeys
-
-**/settings** - Pi settings and behavior changes
-
-**/model** - select / change model
-
-**/thinking** - thinking level / reasoning
-
-**/reload** - reload configuration / after changes
-
-**/quit** - exit
+| Command | Description |
+|---|---|
+| `/help` | Display help information. |
+| `/hotkeys` | List available keyboard shortcuts. |
+| `/settings` | Open Pi settings and configure its behavior. |
+| `/model` | Select or change the AI model. |
+| `/thinking` | Set the thinking level / reasoning effort. |
+| `/reload` | Reload the configuration after making changes. |
+| `/quit` | Exit Pi. |
 
 When we type a backslash (/) to start a prompt Pi shows a list of all available prompts below:
 
@@ -99,21 +95,16 @@ When we type a backslash (/) to start a prompt Pi shows a list of all available 
 ### 2.2. Hotkeys
 These are used for quick access, changes, and controlling the agent’s operation.
 
-**Ctrl+C** - clear the editor, second press Exits
-
-**Ctrl+D** - exit
-
-**Ctrl+L** - select / change model
-
-**Ctrl+S** - save current model and thinking level settings
-
-**Shift+Tab** - thinking level / reasoning
-
-**Esc** - pause/abort - interrupts ongoing work
-
-**Enter** - insert another instruction (into the running process)
-
-**Alt+Enter** - insert another instruction (after the current process finishes)*
+| Shortcut | Description |
+|---|---|
+| `Ctrl+C` | Clear the editor. Press a second time to exit. |
+| `Ctrl+D` | Exit Pi. |
+| `Ctrl+L` | Select or change the AI model. |
+| `Ctrl+S` | Save the current model and thinking level settings. |
+| `Shift+Tab` | Change the thinking level / reasoning effort. |
+| `Esc` | Pause or abort ongoing work. |
+| `Enter` | Insert an additional instruction into the running process. |
+| `Alt+Enter` | Queue an additional instruction to be processed after the current process finishes. |
 
 *Note: On Windows/WSL, the default shortcut is Ctrl+Q*
 
@@ -160,13 +151,13 @@ All our conversations with the Pi agent are archived locally. We can go back to 
 
 #### Prompts:
 
-**/new** - new conversation / session (task, operation)
+| Command | Description |
+|---|---|
+| `/new` | Start a new conversation or session. |
+| `/session` | Display session information, including the session file, ID, messages, tokens, and cost. |
+| `/resume` | Select and continue a previous session. |
+| `/tree` | Display a tree overview of the session history. Allows you to return to an earlier point and explore a different path, which is useful for testing alternative approaches. |
 
-**/session** - session information (session file, ID, messages, tokens, and cost)
-
-**/resume** - select and continue an older session
-
-**/tree** - shows an overview (tree) of the session and allows you to go back and take a different path (great for testing variants)
 
 ## 3. Scaling Up: The Power to Evolve
 The real power of the Pi agent is its gradual growth and evolution = the ability to expand as needed / in a chosen direction based on our needs.
