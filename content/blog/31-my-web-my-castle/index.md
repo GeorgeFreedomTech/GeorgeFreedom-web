@@ -29,7 +29,7 @@ Option 1, which is usually a **dynamic CMS** based on WordPress (WP) or somethin
 
 ### Why Go Static?
 
-Most personal and business websites are essentially online business cards: a brief introduction and an overview of services, together with contact details, sometimes with a blog section containing articles. That means standard pages such as Home, About, Contact, Services and Blog. Nothing more, nothing less. And I don't need anything complicated to create these few pages with links, text and some images. This is a simple **static website**. Various hacks and features such as interactive contact forms are also pointless in this case - unless I am a government institution or plan to collect and manage visitors' data or to store them in a database (DB). That would also expose me to obligations arising from **GDPR**. An ordinary email address is more than enough for contact. Besides, visitors will definitely appreciate direct contact more.
+Most personal and business websites are essentially online business cards: a brief introduction and an overview of services, together with contact details, sometimes with a blog section containing articles. That means standard pages such as Home, About, Contact, Services and Blog. Nothing more, nothing less. And I don't need anything complicated to create these few pages with links, text and some images. This is a simple **static website**. Various hacks and features such as interactive contact forms are also pointless in this case - unless I am a government institution or plan to collect and manage visitors' data or to store them in a database (DB). That would also expose me to obligations arising from **GDPR**. An ordinary email address is more than enough for contact. Besides, visitors will definitely appreciate direct contact more. Last but not least, by going "static" we will **no longer need to pay** the CMS providers for their services and hosting - and trust me - this feels really good. 
 
 ### Building Your Own Static Website
 
@@ -540,9 +540,9 @@ We then need to version our project (the local folder on our computer) using Git
 
 Done. Good job!
 
-So, what have we actually gained? First, we got our data organized and converted it into a more usable format — Markdown is simply great. We took matters into our own hands and built our own website, which we now host (for free!) on GitHub Pages. This has allowed us to remove our dependence on providers and its solutions. By switching to our own static website, we have also improved its overall security and availability. And if any problems arise, it is very easy to simply "pack up" our website, move it, and host it somewhere else.
+So, what have we actually gained? First, we got our data organized and converted it into a more usable format - Markdown is simply great. Second, we took matters into our own hands and built our own website, which we now host (for free!) on GitHub Pages. This has allowed us to remove our dependence on web providers and their solutions - so we no longer need to pay for their services. And third, just by switching to our own static website, we have also improved its overall security and availability. And if any problems arise, it is very easy to simply "pack up" our website, move it, and host it somewhere else.
 
-Managing and updating the website is also significantly easier and more straightforward — because it is our own system and environment, which we built to suit our needs, rather than the other way around.
+Managing and updating the website is also significantly easier and more straightforward - because it is our own system and environment, which we built to suit our needs, rather than the other way around.
 
 In exchange for a little work and learning, we have gained a great deal of freedom and independence in the digital space. And a good feeling, too!
 
