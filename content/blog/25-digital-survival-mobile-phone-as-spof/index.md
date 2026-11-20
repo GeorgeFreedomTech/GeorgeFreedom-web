@@ -9,7 +9,7 @@ path = "digital-survival-mobile-phone-as-spof-single-point-of-failure"
 image = "images/hardware-keys.jpeg"
 
 [taxonomies]
-tags = ["security-and-privacy", "resilience-and-preparedness"]
+tags = ["security-and-privacy", "resilience-and-preparedness", "tutorial"]
 +++
 
 
